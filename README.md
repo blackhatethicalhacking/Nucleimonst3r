@@ -52,6 +52,7 @@ To install the required tools and ensure that the location of templates is set t
 - Install Go on the system by following the instructions at https://golang.org/doc/install.
 - Clone the nuclei and httpx repositories from GitHub.
 - Build and install nuclei and httpx using the above-mentioned commands.
+- Install figlet & lolcat for the cool Rainbow Colors! `pip install lolcat` and `apt-get install figlet`
 - Create a folder named "nuclei-templates" in the /root/ directory and copy the required templates to this folder.
 
 # Installation
