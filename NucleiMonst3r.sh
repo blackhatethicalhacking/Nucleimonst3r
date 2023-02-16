@@ -93,4 +93,4 @@ echo "Starting Nuclei scan with the selected templates..." | lolcat
 cat $dir_path/filtered_urls.txt | nuclei -stats -si 150 $t_args -o $dir_path/nuclei_results_for_$dir_name.txt 
 
 echo "Moving temporary files to the path $dir_path..." | lolcat
-mv $dir_path/filtered_urls.txt $dir_path/httpx_output.txt $dir_path
+mv *.txt $dir_path/
