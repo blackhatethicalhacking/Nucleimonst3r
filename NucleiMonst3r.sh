@@ -27,13 +27,18 @@ tput bold;echo "++++ CONNECTION FOUND, LET'S GO!" | lolcat
 read -p "Enter website: " website
 read -p "Enter the path to save the results: " path
 
+# create a directory with the domain name of the website
+dir_name=$(echo $website | awk -F/ '{print $3}')
+dir_path="$path/$dir_name"
+mkdir -p $dir_path
+
 # Fetching URLs for www.amazon.com.mx and filtering by specific extensions please wait...
 echo "Fetching URLs for $website and filtering by specific extensions..." | lolcat
-waybackurls $website | grep -E "(\.js|\.css|\.php|\.asp|\.aspx|\.jsp|\.json|\.html|\.xml)$" | tee filtered_urls.txt | lolcat
+waybackurls $website | grep -E "(\.js|\.css|\.php|\.asp|\.aspx|\.jsp|\.json|\.html|\.xml)$" | tee $dir_path/filtered_urls.txt | lolcat
 
 # Checking filtered URLs with httpx and saving the output in httpx_output.txt...
 echo "Checking filtered URLs with httpx and saving the output in httpx_output.txt..." | lolcat
-cat filtered_urls.txt | httpx -silent | tee httpx_output.txt | lolcat
+cat $dir_path/filtered_urls.txt | httpx -silent | tee $dir_path/httpx_output.txt | lolcat
 
 echo "Please choose from the following options for nuclei templates:
 1. cves
@@ -85,8 +90,7 @@ if [[ $templates == *"9"* ]]; then
 fi
 
 echo "Starting Nuclei scan with the selected templates..." | lolcat
-cat filtered_urls.txt | nuclei -stats -si 150 $t_args -o $path/nuclei_results_for_$website.txt 
+cat $dir_path/filtered_urls.txt | nuclei -stats -si 150 $t_args -o $dir_path/nuclei_results_for_$dir_name.txt 
 
-echo "Moving temporary files to the path $path..." | lolcat
-mv filtered_urls.txt httpx_output.txt $path
-
+echo "Moving temporary files to the path $dir_path..." | lolcat
+mv $dir_path/filtered_urls.txt $dir_path/httpx_output.txt $dir_path
