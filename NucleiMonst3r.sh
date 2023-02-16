@@ -97,6 +97,3 @@ fi
 
 echo "Starting Nuclei scan with the selected templates..."
 cat $dir_path/filtered_urls.txt | nuclei -stats -si 150 $t_args -o $dir_path/nuclei_results_for_$dir_name.txt 
-
-echo "Moving temporary files to the path $dir_name..."
-mv $dir_path/*.txt $path/
