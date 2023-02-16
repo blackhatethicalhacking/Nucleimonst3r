@@ -26,25 +26,20 @@ fi
 tput bold;echo "++++ CONNECTION FOUND, LET'S GO!" | lolcat
 # get domain name from user input
 echo "Enter Domain:"
-read website
+read domain
 
 # create a directory with the domain name of the website
-dir_name=$(echo $website | awk -F/ '{print $3}')
-path="./$dir_name"
-dir_path="$path"
 
-# create the directory if it doesn't exist
-if [ ! -d $dir_path ]; then
-  mkdir $dir_path
-fi
+echo "Creating directory for output files..."
+mkdir "$domain"
 
 # Fetching URLs for website and filtering by specific extensions please wait...
-echo "Fetching URLs for $website and filtering by specific extensions..."
-waybackurls $website | grep -E "(\.js|\.css|\.php|\.asp|\.aspx|\.jsp|\.json|\.html|\.xml)$" | tee $dir_path/filtered_urls.txt
+echo "Fetching URLs for $domain and filtering by specific extensions..."
+waybackurls $domain | grep -E "(\.js|\.css|\.php|\.asp|\.aspx|\.jsp|\.json|\.html|\.xml)$" | tee $domain/filtered_urls.txt
 
 # Checking filtered URLs with httpx and saving the output in httpx_output.txt...
 echo "Checking filtered URLs with httpx and saving the output in httpx_output.txt..."
-cat $dir_path/filtered_urls.txt | httpx -silent | tee $dir_path/httpx_output.txt
+cat $domain/filtered_urls.txt | httpx -silent | tee $domain/httpx_output.txt
 
 echo "Please choose from the following options for nuclei templates:"
 echo "1. cves"
@@ -96,4 +91,4 @@ if [[ $templates == *"9"* ]]; then
 fi
 
 echo "Starting Nuclei scan with the selected templates..."
-cat $dir_path/httpx_output.txt | nuclei -stats -si 100 $t_args -o $dir_path/nuclei_results_for_$dir_name.txt 
+cat $domain/httpx_output.txt | nuclei -stats -si 100 $t_args -o $domain/nuclei_results_for_$domain.txt 
