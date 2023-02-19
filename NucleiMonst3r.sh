@@ -93,14 +93,7 @@ fi
 echo "Starting Nuclei scan with the selected templates..."
 cat $domain/httpx_output.txt | nuclei -stats -si 100 $t_args -o $domain/nuclei_results_for_$domain.txt
 # Matrix effect
-echo "Exiting the Matrix for 5 seconds in:" | toilet --metal -f term -F border
-sleep 1
-echo "3" | toilet --gay -f term -F border
-sleep 1
-echo "2" | toilet --metal -f term -F border
-sleep 1
-echo "1" | toilet --gay -f term -F border
-sleep 1
+echo "Exiting the Matrix for 5 seconds:" | toilet --metal -f term -F border
 
 R='\033[0;31m'
 G='\033[0;32m'
