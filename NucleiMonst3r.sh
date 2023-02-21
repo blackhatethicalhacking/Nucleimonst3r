@@ -39,7 +39,9 @@ waybackurls $domain | tee $domain/filtered_urls.txt | lolcat
 
 # Checking filtered URLs with httpx and saving the output in httpx_output.txt...
 echo "Checking filtered URLs with httpx and saving the output in httpx_output.txt..."
-cat $domain/filtered_urls.txt | httpx -silent | tee $domain/httpx_output.txt | lolca
+cat $domain/filtered_urls.txt | httpx -silent | tee $domain/httpx_output.txt | lolcat
+total_filtered_urls=$(grep -c '^' "$domain/httpx_output.txt")
+echo "Total Filtered URLs found: $total_filtered_urls" | lolcat
 
 echo "Please choose from the following options for nuclei templates:"
 echo "1. cves"
