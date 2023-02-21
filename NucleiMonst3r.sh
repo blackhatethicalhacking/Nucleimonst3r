@@ -35,7 +35,7 @@ mkdir "$domain"
 
 # Fetching URLs for website and filtering by specific extensions please wait...
 echo "Fetching URLs for $domain and filtering by specific extensions..."
-waybackurls $domain | grep -E "(\.js|\.css|\.php|\.asp|\.aspx|\.jsp|\.json|\.html|\.xml)$" | tee $domain/filtered_urls.txt
+waybackurls $domain | tee $domain/filtered_urls.txt
 
 # Checking filtered URLs with httpx and saving the output in httpx_output.txt...
 echo "Checking filtered URLs with httpx and saving the output in httpx_output.txt..."
