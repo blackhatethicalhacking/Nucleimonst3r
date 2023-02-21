@@ -65,8 +65,8 @@ To install the required tools and ensure that the location of templates is set t
 
 `./SNucleimonst3r.sh`
 
-- The script will prompt you to provide the target URL(s) 
-- Enter the path to save results
+- The script will prompt you to provide the domain
+- Then it will ask you to choose templates
 
 # Screenshot
 
