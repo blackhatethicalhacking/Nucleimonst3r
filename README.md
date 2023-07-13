@@ -69,9 +69,9 @@ To install the required tools and ensure that the location of templates is set t
 
 **Main Menu**
 
-![Screenshot 2023-02-14 at 3 39 13 AM](https://user-images.githubusercontent.com/13942386/218616106-651c4bc7-99a8-406f-a061-231ffeb81263.png)
+![Screenshot_2023-07-14_00_43_55](https://github.com/blackhatethicalhacking/Nucleimonst3r/assets/13942386/296e95e5-ad33-4ccc-abe2-ad04b39c37d6)
 
-![Screenshot 2023-02-14 at 3 38 40 AM](https://user-images.githubusercontent.com/13942386/218616121-8a48d4b9-b0c1-44ad-94bf-4f3872a9742d.png)
+![Screenshot_2023-07-14_01_17_16](https://github.com/blackhatethicalhacking/Nucleimonst3r/assets/13942386/feed137a-038b-4b6b-93d7-f834c627154d)
 
 
 # Compatibility: 
