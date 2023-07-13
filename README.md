@@ -36,11 +36,11 @@ To use Nucleimonst3r, you need to have the following tools installed:
 
 - nuclei: Nucleimonst3r requires nuclei to be installed on the system. To install nuclei on Kali Linux, use the following command:
 
-`go get -u -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei`
+`go install github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest`
 
 - httpx: Nucleimonst3r also requires httpx to be installed on the system. To install httpx on Kali Linux, use the following command:
 
-`go get -u -v github.com/projectdiscovery/httpx/cmd/httpx`
+`go install github.com/projectdiscovery/httpx/cmd/httpx@latest`
 
 - waybackurls: can be installed: `go install github.com/tomnomnom/waybackurls@latest`
 
@@ -49,7 +49,7 @@ To install the required tools and ensure that the location of templates is set t
 - Install Go on the system by following the instructions at https://golang.org/doc/install.
 - Clone the nuclei and httpx repositories from GitHub.
 - Build and install nuclei and httpx using the above-mentioned commands.
-- Install figlet & lolcat for the cool Rainbow Colors! `pip install lolcat` and `apt-get install figlet`
+- Install figlet & lolcat,toilet for the cool Rainbow Colors! `pip install lolcat` and `apt-get install figlet`,`apt-get install toilet`
 - Create a folder named "nuclei-templates" in the /root/ directory and copy the required templates to this folder.
 
 # Installation
@@ -60,7 +60,7 @@ To install the required tools and ensure that the location of templates is set t
 
 `chmod +x Nucleimonst3r.sh`
 
-`./SNucleimonst3r.sh`
+`./Nucleimonst3r.sh`
 
 - The script will prompt you to provide the domain
 - Then it will ask you to choose templates
