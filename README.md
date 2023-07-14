@@ -13,7 +13,8 @@ Nucleimonst3r is written by Chris "SaintDruG" Abou-Chabke from Black Hat Ethical
 
 # Description
 
-Nucleimonst3r is a high-speed vulnerability scanner designed for red-teamers who need to quickly and efficiently identify potential targets for attack. The tool fetches URLs for a given domain and filters them based on specific extensions. The filtered URLs are then checked using the httpx tool and the results are saved in a file named "httpx_output.txt". This output is used by nuclei to scan the URLs for vulnerabilities using pre-defined templates. The templates are located at /root/nuclei-templates/.
+Nucleimonst3r is a high-speed vulnerability scanner designed for red-teamers who need to quickly and efficiently identify potential targets for attack. The tool fetches URLs for a given domain and filters them based on specific extensions. The filtered URLs are then checked using the httpx tool and the results are saved in a file named "httpx_output.txt". This output is used by nuclei to scan the URLs for vulnerabilities using 
+using a prompt that will ask you what templates you want to run with some combination and a 'Hail Mary' option that lets you use all templates which get updated every time you run the tool. The templates are located at /root/nuclei-templates/.
 
 The tool offers several options for customizing the scan, including the ability to specify a custom path for saving results and to display statistics about the running scan. The statistics can be displayed in the terminal or written to an output file in JSONL(ines) format. The user can also specify the number of seconds to wait between showing a statistics update.
 
