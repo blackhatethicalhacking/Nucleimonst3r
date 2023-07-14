@@ -57,35 +57,35 @@ echo "Enter the numbers separated by commas:"
 read templates
 
 if [[ $templates == *"1"* ]]; then
-  t_args="$t_args -t /root/nuclei-templates/cves"
+  t_args="$t_args -t /root/nuclei-templates/http/cves/"
 fi
 
 if [[ $templates == *"2"* ]]; then
-  t_args="$t_args -t /root/nuclei-templates/vulnerabilities"
+  t_args="$t_args -t /root/nuclei-templates/http/vulnerabilities/"
 fi
 
 if [[ $templates == *"3"* ]]; then
-  t_args="$t_args -t /root/nuclei-templates/exposed-panels"
+  t_args="$t_args -t /root/nuclei-templates/http/exposed-panels/"
 fi
 
 if [[ $templates == *"4"* ]]; then
-  t_args="$t_args -t /root/nuclei-templates/exposures"
+  t_args="$t_args -t /root/nuclei-templates/http/exposures/"
 fi
 
 if [[ $templates == *"5"* ]]; then
-  t_args="$t_args -t /root/nuclei-templates/file"
+  t_args="$t_args -t /root/nuclei-templates/file/"
 fi
 
 if [[ $templates == *"6"* ]]; then
-  t_args="$t_args -t /root/nuclei-templates/miscellaneous"
+  t_args="$t_args -t /root/nuclei-templates/http/miscellaneous/"
 fi
 
 if [[ $templates == *"7"* ]]; then
-  t_args="$t_args -t /root/nuclei-templates/misconfiguration"
+  t_args="$t_args -t /root/nuclei-templates/http/misconfiguration/"
 fi
 
 if [[ $templates == *"8"* ]]; then
-  t_args="$t_args -t /root/nuclei-templates/technologies"
+  t_args="$t_args -t /root/nuclei-templates/http/technologies/"
 fi
 
 if [[ $templates == *"9"* ]]; then
