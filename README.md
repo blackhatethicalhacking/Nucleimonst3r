@@ -11,14 +11,14 @@
 Nucleimonst3r is written by Chris "SaintDruG" Abou-Chabke from Black Hat Ethical Hacking and is designed for Red Teams and Bug Bounty Hunters!
 </p>
 
-# Description
+## Description
 
-Nucleimonst3r is a high-speed vulnerability scanner designed for Bug Bounty Hunters and Red Teamers who need to quickly and efficiently identify potential targets for attack. The tool fetches URLs for a given domain and filters them based on specific extensions. The filtered URLs are then checked using the httpx tool and the results are saved in a file named "httpx_output.txt". This output is used by nuclei to scan the URLs for vulnerabilities using a prompt that will ask you what templates you want to run with some combination and a 'Hail Mary' option that lets you use all templates which get updated every time you run the tool. The templates are located at /root/nuclei-templates/.
+Nucleimonst3r is a high-speed vulnerability scanner designed for Bug Bounty Hunters and Red Teamers who need to quickly and efficiently identify potential targets for attack. The tool fetches URLs for a given domain and filters them based on specific extensions. The filtered URLs are then checked using the httpx tool and the results are saved in a file named "httpx_output.txt". This output is used by nuclei to scan the URLs for vulnerabilities using a prompt that will ask you what templates you want to run with some combination and a 'Hail Mary' option that lets you use all templates which get updated every time you run the tool. The templates are located at `$HOME/nuclei-templates/`.
 
 The tool offers several options for customizing the scan, including the ability to specify a custom path for saving results and to display statistics about the running scan. The statistics can be displayed in the terminal or written to an output file in JSON(Lines) format. The user can also specify the number of seconds to wait between showing a statistics update.
 
 
-# Features:
+## Features
 
 - Advanced Scanning Techniques: Nucleimonst3r is equipped with advanced scanning techniques that allow you to perform deep, comprehensive scans of your target website. The tool can be configured to look for specific vulnerabilities and security weaknesses, making it easy to identify potential threats and remediate them before they can be exploited.
 
@@ -30,7 +30,7 @@ The tool offers several options for customizing the scan, including the ability 
 
 - Integration with Other Tools: Nucleimonst3r integrates with other tools, such as httpx and waybackurls, to provide a complete solution for website security testing. This integration makes it easy to combine the strengths of these tools to get the best results, and helps streamline the security testing process.
 
-# Requirements:
+## Requirements
 
 To use Nucleimonst3r, you need to have the following tools installed:
 
@@ -42,17 +42,19 @@ To use Nucleimonst3r, you need to have the following tools installed:
 
 `go install github.com/projectdiscovery/httpx/cmd/httpx@latest`
 
+*(Another tool, also called `httpx` provided by the package `python3-httpx` might interfere with the `httpx` you installed from ProjectDiscovery. Run `httpx --version` and make sure you see the text 'projectdiscovery.io')*
+
 - waybackurls: can be installed: `go install github.com/tomnomnom/waybackurls@latest`
 
-To install the required tools and ensure that the location of templates is set to `/root/nuclei-templates/`, the user should follow these steps:
+To install the required tools and ensure that the location of templates is set to `$HOME/nuclei-templates/`, the user should follow these steps:
 
 - Install Go on the system by following the instructions at https://golang.org/doc/install.
 - Clone the nuclei and httpx repositories from GitHub.
 - Build and install nuclei and httpx using the above-mentioned commands.
 - Install figlet & lolcat,toilet for the cool Rainbow Colors! `pip install lolcat` and `apt-get install figlet`,`apt-get install toilet`
-- Create a folder named "nuclei-templates" in the /root/ directory and copy the required templates to this folder.
+- Run the command `nuclei -ut` which will automatically create a folder named `nuclei-templates` in the `$HOME/` directory and copy the required templates to this folder.
 
-# Installation
+## Installation
 
 `git clone https://github.com/blackhatethicalhacking/Nucleimonst3r.git`
 
@@ -64,8 +66,9 @@ To install the required tools and ensure that the location of templates is set t
 
 - The script will prompt you to provide the domain
 - Then it will ask you to choose templates
+- The results of nuclei scan can be found in `./{{domain}}/nuclei_results_for_{{domain}}.txt`
 
-# Screenshot
+## Screenshot
 
 **Main Menu**
 
@@ -73,19 +76,17 @@ To install the required tools and ensure that the location of templates is set t
 
 ![Screenshot_2023-07-14_01_17_16](https://github.com/blackhatethicalhacking/Nucleimonst3r/assets/13942386/feed137a-038b-4b6b-93d7-f834c627154d)
 
-
-# Compatibility: 
+## Compatibility
 
 This tool has been tested on Kali Linux, Ubuntu and MacOS.
 
-# Disclaimer
+## Disclaimer
 
 This tool is provided for educational and research purpose only. The author of this project are no way responsible for any misuse of this tool. 
 We use it to test under NDA agreements with clients and their consents for pentesting purposes and we never encourage to misuse or take responsibility for any damage caused !
 
-# Support
+## Support
 
 If you would like to support us, you can always buy us coffee(s)! :blush:
 
 <a href="https://www.buymeacoffee.com/bheh" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
-
