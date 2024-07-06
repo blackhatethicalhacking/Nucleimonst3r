@@ -25,7 +25,7 @@ if [ $? -ne 0 ];then
 fi
 tput bold;echo "++++ CONNECTION FOUND, LET'S GO!" | lolcat
 # get domain name from user input
-echo "Enter Domain:"
+echo -n "Enter Domain:"
 read domain
 
 # create a directory with the domain name of the website
@@ -57,39 +57,39 @@ echo "Enter the numbers separated by commas:"
 read templates
 
 if [[ $templates == *"1"* ]]; then
-  t_args="$t_args -t /root/nuclei-templates/http/cves/"
+  t_args="$t_args -t ${HOME}/nuclei-templates/http/cves/"
 fi
 
 if [[ $templates == *"2"* ]]; then
-  t_args="$t_args -t /root/nuclei-templates/http/vulnerabilities/"
+  t_args="$t_args -t ${HOME}/nuclei-templates/http/vulnerabilities/"
 fi
 
 if [[ $templates == *"3"* ]]; then
-  t_args="$t_args -t /root/nuclei-templates/http/exposed-panels/"
+  t_args="$t_args -t ${HOME}/nuclei-templates/http/exposed-panels/"
 fi
 
 if [[ $templates == *"4"* ]]; then
-  t_args="$t_args -t /root/nuclei-templates/http/exposures/"
+  t_args="$t_args -t ${HOME}/nuclei-templates/http/exposures/"
 fi
 
 if [[ $templates == *"5"* ]]; then
-  t_args="$t_args -t /root/nuclei-templates/file/"
+  t_args="$t_args -t ${HOME}/nuclei-templates/file/"
 fi
 
 if [[ $templates == *"6"* ]]; then
-  t_args="$t_args -t /root/nuclei-templates/http/miscellaneous/"
+  t_args="$t_args -t ${HOME}/nuclei-templates/http/miscellaneous/"
 fi
 
 if [[ $templates == *"7"* ]]; then
-  t_args="$t_args -t /root/nuclei-templates/http/misconfiguration/"
+  t_args="$t_args -t ${HOME}/nuclei-templates/http/misconfiguration/"
 fi
 
 if [[ $templates == *"8"* ]]; then
-  t_args="$t_args -t /root/nuclei-templates/http/technologies/"
+  t_args="$t_args -t ${HOME}/nuclei-templates/http/technologies/"
 fi
 
 if [[ $templates == *"9"* ]]; then
-  t_args="$t_args -t /root/nuclei-templates"
+  t_args="$t_args -t ${HOME}/nuclei-templates"
 fi
 
 echo "Starting Nuclei scan with the selected templates..."
