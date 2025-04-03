@@ -40,7 +40,7 @@ To use Nucleimonst3r, you need to have the following tools installed:
 
 - httpx: Nucleimonst3r also requires httpx to be installed on the system. To install httpx on Kali Linux, use the following command:
 
-`go install github.com/projectdiscovery/httpx/cmd/httpx@latest`
+`go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest`
 
 - waybackurls: can be installed: `go install github.com/tomnomnom/waybackurls@latest`
 
